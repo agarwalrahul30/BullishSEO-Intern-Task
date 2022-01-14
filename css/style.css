@@ -1,0 +1,112 @@
+body {
+    font-family: arial;
+    font-size: 16px;
+    margin: 0;
+    /* background: linear-gradient(to right top, #e15ce6, #0eaae8); */
+    min-height: 100vh;
+}
+
+.wrapper{
+    max-width: 450px;
+    margin: 150px auto;
+}
+
+.wrapper .search_input {
+    background: #fff;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 3px 0px   rgba(0,0,0,0.12);
+    color: #747272;
+}
+
+.search_input input {
+    height: 20px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 2% 2%;
+    border: 2px hidden #fff;
+    font-size: 16px;
+    color: #747272;
+    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.search_input input:focus{
+    outline:2px solid rgb(42, 206, 192);
+}
+
+.search_input .autocom-box{
+    padding: 0;
+    max-block-size: 280px;
+    overflow-y: auto;
+    border-radius: 2px;
+    border-width: 0px 1px 1px;
+    border-style: inset; 
+    border-color: #efefef;
+    opacity: 0;
+    pointer-events: none;
+    
+}
+
+.search_input.active .autocom-box{
+    padding: 10px 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.autocom-box li {
+    list-style: none;
+    padding: 10px 12px;
+    cursor: default;
+    display: none;
+}
+
+.search_input.active .autocom-box li{
+    display: block;
+}
+
+.autocom-box li:hover {
+    background: #efefef;
+}
+
+.autocom-box li #create {
+    color:red;
+    background-color: #efefef;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.status {
+    position: absolute;
+    right: 10px;
+}
+
+.green {
+    color: rgb(63, 207, 63);
+}
+
+.orange {
+    color: orange;
+}
+
+.red {
+    color: red;
+}
+
+.container {
+    position: relative;
+}
+
+td {
+    padding: 1px;
+}
+
+#create-status {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    color: red;
+}
+
+#create-cell {
+    padding-left: 10px;
+}
