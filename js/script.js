@@ -43,7 +43,46 @@ inputBox.keyup ((e)=>{
   
     $("li").click(function(e) {
         $("input").val($(this).text().split(" ")[6]+" "+$(this).text().split(" ")[7]);
-    });// to fill in name
+        searchWrapper.removeClass("active");
+    });// to fill in name by clicking
+
+    var li = $('li');
+    var liSelected;
+    $(window).keydown(function(e) {
+    if (e.which === 40) {   //handling down arrow key press
+        if (liSelected) {
+            liSelected.removeClass('selected');
+            next = liSelected.next();
+            if (next.length > 0) {
+                liSelected = next.addClass('selected');
+            } else {
+                liSelected = li.eq(0).addClass('selected');
+            }
+        } else {
+            liSelected = li.eq(0).addClass('selected');
+        }
+        
+        } else if (e.which === 38) {        //handling up arrow key press
+            if (liSelected) {
+                liSelected.removeClass('selected');
+                next = liSelected.prev();
+                if (next.length > 0) {
+                    liSelected = next.addClass('selected');
+                } else {
+                    liSelected = li.last().addClass('selected');
+                }
+            } else {
+                liSelected = li.last().addClass('selected');
+            }
+        }
+
+        else if(e.which === 13) {           //handling Enter Key press
+            if(liSelected) {
+                liSelected.trigger('click');
+            }
+        }
+    
+    });
 });
 
 function showSuggestions(list) {
