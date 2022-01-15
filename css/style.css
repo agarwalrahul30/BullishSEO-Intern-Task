@@ -65,7 +65,11 @@ body {
 }
 
 .autocom-box li:hover {
-    background: #efefef;
+    background-color: #efefef;
+}
+
+.autocom-box li.selected {
+    background-color: #efefef;
 }
 
 .autocom-box li #create {
